@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<div class='sqs-block'>
+<style>
+@media only screen and (max-width: 768px) {
+        #graph{
+   	width: 600px;
+        }
+		#arrow{
+	display:block;
+	}
+	#gProjects{
+	display:block;
+	}
+	#gIct{
+	display:block;
+	}
+	#gResearch{
+	display:block;
+	}
+  }
+  @media only screen and (max-width: 480px) { 
+  #graph{
+   	width: 250px;
+        }
+	#arrow{
+	display:block;
+	}
+	#gProjects{
+	display:block;
+	}
+	#gIct{
+	display:block;
+	}
+	#gResearch{
+	display:block;
+	}
+   
+  }
+  @keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 0px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 3px;
+  }
+} 
+
+</style>
+<svg id='graph' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width=" 841.89px" height="550px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">
+	 <style>
+	 .circle:hover{
+    cursor: pointer;
+}
+	 
+	 </style>
+	 <script>
+<![CDATA[
+//arrow animation on hover
+var temp = false;
+document.getElementById('graph').onmouseover = function(){
+	if(temp===false){
+  var anime= document.getElementById('animateOnscroll');
+  document.getElementById('arrow').setAttribute("display", "block");
+  anime.beginElement();
+  temp=true;
+  }
+}
+//circle events
+var onBoolean=['off','off','off'];
+function showClick(evt, node,circle,idNum)
+{
+		if (onBoolean[idNum]==='off'){
+		onBoolean[idNum] = 'on';
+		}else{
+			onBoolean[idNum] = 'off';
+		}
+        var svgdoc = evt.target.ownerDocument;
+        var obj = svgdoc.getElementById(node)
+		var pth = svgdoc.getElementById(circle)
+        obj.setAttribute("display", "block");
+		pth.setAttribute("opacity", "0.5");
+}
+
+function show(evt, node,circle,idNum)
+{
+	if (onBoolean[idNum]==='off'){
+        var svgdoc = evt.target.ownerDocument;
+        var obj = svgdoc.getElementById(node);
+		var pth = svgdoc.getElementById(circle);
+		var shp= svgdoc.getElementsByClassName('shape')[idNum];
+        obj.setAttribute("display", "block");
+		pth.setAttribute("opacity", "1.0");	
+		shp.style.WebkitAnimation = "0.5s draw linear forwards";
+		shp.style.animation = "0.5s draw linear forwards";
+	}
+}
+
+function hide(evt, node,circle,idNum)
+{
+	if(onBoolean[idNum]==='off'){
+        var svgdoc = evt.target.ownerDocument;
+        var obj = svgdoc.getElementById(node);
+		var pth = svgdoc.getElementById(circle)
+		var shp= svgdoc.getElementsByClassName('shape')[idNum];
+        obj.setAttribute("display" , "none");
+		pth.setAttribute("opacity", "0.5");
+		shp.style.WebkitAnimation = null;
+		shp.style.animation = null;
+		}
+}
+]]></script>
+
+	<g >
+	<path class="circle" id='project' onmouseover="show(evt, 'gProjects','project',0)" onmouseout="hide(evt, 'gProjects','project',0)" onclick="showClick(evt, 'gProjects','project',0)"   opacity="0.5" fill="#852626" d="M333.275,232.396c0,77.172-62.199,139.731-138.926,139.731S55.423,309.568,55.423,232.396
+		c0-77.172,62.199-139.732,138.926-139.732S333.275,155.224,333.275,232.396"/>
+		</g>
+		<g>
+	<path class="circle" id='ict' onmouseover="show(evt, 'gIct','ict',1)" onmouseout="hide(evt, 'gIct','ict',1)" onclick="showClick(evt, 'gIct','ict',1, 'on')" opacity="0.5" fill="#285972" d="M561.275,232.396c0,77.172-62.199,139.731-138.927,139.731
+		c-76.727,0-138.926-62.56-138.926-139.731c0-77.172,62.199-139.732,138.926-139.732
+		C499.076,92.664,561.275,155.224,561.275,232.396"/>
+		</g>
+		<g>
+	<path class="circle" id='research'  onmouseover="show(evt, 'gResearch','research',2)" onmouseout="hide(evt, 'gResearch','research',2)" onclick="showClick(evt, 'gResearch','research',2, 'on')" opacity="0.5" fill="#2C6C34" d="M791.275,232.396c0,77.172-62.199,139.731-138.927,139.731
+		c-76.727,0-138.926-62.56-138.926-139.731c0-77.172,62.199-139.732,138.926-139.732
+		C729.076,92.664,791.275,155.224,791.275,232.396"/>	
+	
+	</g>
+	
+	    <g id='arrow' display='none' >
+        <rect x="170.749" y="44.913" fill="#A4D9ED" width="505.8" height="24.362" />
+		<polygon fill="#A4D9ED" points="171.749,57.094 171.749,77.218 151.124,67.156 130.499,57.094 151.124,47.032 171.749,36.97 	"/>
+		<polygon fill="#A4D9ED" points="674.999,57.094 674.999,36.97 695.624,47.032 716.249,57.094 695.624,67.156 674.999,77.218 	"/>
+		<animateTransform id='animateOnscroll' attributeName="transform"
+			type="scale"
+			from="0 1"
+			to="1 1"
+			begin="indefinite"
+			dur="2s"
+			restart="whenNotActive"
+			
+			/>
+    </g>
+<g>
+
+		<text  x='200.5063' y='62.1885' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="18">Delivery</text>
+		<text  x='384.6543' y='62.1885' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="18">Innovation</text>
+		<text  x='567.3584' y='62.1885' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="18">Knowledge</text>
+	</g>
+<g >
+		<text  x='587.4883 ' y='243.9434' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="25">RESEARCH</text>
+		<text  x='130.5239' y='223.9512' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="25">PROJECT </text>
+		<text  x='126.1377 ' y='264.751' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="25">DELIVERY</text>
+		<text  x='399.498' y= '243.9434' display="inline" fill="#FFFFFF" font-family="'MuseoSans'" font-size="25">ICT</text>
+</g>
+
+<g  id='gProjects' display='none'>
+<rect class="shape"  x="79.50" y="395" fill="none" stroke="#C29292"  width="230" height="140"/>
+		<text  id='tProjects' fill="#000000" font-family="'MuseoSans'" font-size="12"> 
+		<tspan x='104.4229' y='420'  >• Community Energy Projects  </tspan>
+		<tspan x='104.4229' y='440'  >• Community Flood Planning   </tspan>
+		<tspan x='104.4229' y='460'  >• Shared Ownership Projects    </tspan>
+		<tspan x='104.4229' y='480'  >• Community Right-to-Buy  </tspan> 
+		<tspan x='104.4229' y='500' >• Local Energy Economies  </tspan>		
+</text>
+</g>
+<g  id='gIct' display='none'>
+<rect class="shape" x="315.50" y="395" fill="none" stroke="#91AAB6"  width="230" height="140"/>
+<text  id='tIct' fill="#000000" font-family="'MuseoSans'" font-size="12"> 
+		<tspan  x='328.4229' y='420'  >• Off-grid Energy </tspan> 
+		<tspan  x='338.4229' y='440'  > Communications &amp;  Monitoring</tspan>  
+		<tspan  x='328.4229' y='460'  >• Smart System Optimisation </tspan>  
+        <tspan  x='328.4229' y='480'  >• Supply Chain Networking    </tspan>  
+		<tspan x='328.4229' y='500'  >• Online Knowledge Sharing    </tspan>
+		<tspan x='328.4229' y='520'  >• Mobile Payment Systems  </tspan>
+</text>
+</g>
+<g id='gResearch' display='none'>
+<rect  class="shape" x="551.50" y="395" fill="none" stroke="#95B498" stroke-width="3" stroke-miterlimit="9" width="230" height="140"/> 
+<text  id='tResearch' fill="#000000" font-family="'MuseoSans'" font-size="12"> 
+		<tspan  x='568.4229'  y='420'  >• Community Energy Research </tspan>  			
+        <tspan  x='568.4229'  y='440'  >• Socio-Economic Analysis </tspan>  
+		<tspan x='568.4229' y='460'  >• Global Data Collection   </tspan>
+		<tspan x='568.4229' y='480'  >• Emerging Market Research</tspan>
+		<tspan x='568.4229' y='500'  >• Policy Analysis &amp; Development  </tspan>
+		<tspan x='568.4229' y='520'  >• Monitoring &amp; Evaluation </tspan>
+</text>
+</g>
+</svg>
+</div>
